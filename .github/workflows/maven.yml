@@ -2,9 +2,11 @@ name: Java CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -23,6 +25,9 @@ jobs:
 
       - name: Compile Java Program
         run: javac New.java
+
+      - name: Run Java Program
+        run: java New
 
       - name: Run Java Program
         run: java New
